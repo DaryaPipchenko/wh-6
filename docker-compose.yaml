@@ -1,0 +1,15 @@
+version: "3"
+
+networks:
+  custom-app:
+    driver: bridge
+
+services:
+  app:
+    build: .
+    ports:
+      - "8083:80"
+    volumes:
+      - .:/var/www/html
+    networks:
+          - custom-app
